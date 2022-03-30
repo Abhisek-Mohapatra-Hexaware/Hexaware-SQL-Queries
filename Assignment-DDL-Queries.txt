@@ -1,0 +1,33 @@
+create database practice_DDl;
+use practice_DDl;
+# Q-01
+create table TRG_DEPT(
+ID int(7),
+NAME varchar(25)
+);
+# Q-03
+create table TRG_EMP(
+ID int(7),
+LAST_NAME varchar(25),
+FIRST_NAME varchar(25),
+DEPT_ID int(7)
+);
+#Q-04
+alter table TRG_EMP modify LAST_NAME varchar(50);
+# Q-05
+create table employee 
+select ID as ID, FIRST_NAME as FIRST_NAME, LAST_NAME AS LAST_NAME, DEPT_ID as DEPT_ID 
+from TRG_EMP;
+# Q-06
+drop table TRG_EMP;
+# Q-07
+alter table employee rename TRG_EMPLOYEES;
+#Q-08
+alter table TRG_EMPLOYEES rename TRG_EMP;
+alter table TRG_EMP
+drop column FIRST_NAME;
+desc TRG_EMP;
+ 
+
+
+
